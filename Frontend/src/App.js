@@ -3,6 +3,8 @@ import Footer from "./components/footer.jsx";
 import Home from "./components/home.jsx";
 import Login from "./components/login.jsx";
 import Signup from "./components/signup";
+import ContactUs from "./components/contact_us";
+import About from "./components/about";
 
 import "./App.css";
 import {
@@ -44,6 +46,25 @@ function App() {
             <>
               <Navbar />
               <Login />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Navbar />
+              <About />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Navbar />
+              <ContactUs />
               <Footer />
             </>
           }

@@ -39,8 +39,8 @@ function Navbar() {
     <>
       {localStorage.getItem("token") ? (
         <>
-          <div>
-            <nav class="navbar navbar-expand-lg navbar-dark navbar_bg">
+          <div className="navbar_body">
+            <nav class="navbar navbar-expand-lg navbar-dark ">
               <div class="container">
                 {/* Logo */}
                 <Link class="navbar-brand" to="/">
@@ -68,7 +68,10 @@ function Navbar() {
                 >
                   {/* Sidebar-Header */}
                   <div class="offcanvas-header text-white border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    <h5
+                      class="offcanvas-title nav_txt"
+                      id="offcanvasNavbarLabel"
+                    >
                       Travelista
                     </h5>
                     <button
@@ -82,24 +85,38 @@ function Navbar() {
                   {/* Sidebar-Body */}
                   <div class="offcanvas-body d-flex flex-column p-4 flex-lg-row p-lg-0">
                     <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3 menu">
-                      <li class="nav-item mx-2">
-                        <Link class="nav-link" aria-current="page" to="/">
+                      <li class="nav-item mx-2 nav_txt">
+                        <Link
+                          class="nav-link  text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          aria-current="page"
+                          to="/"
+                        >
                           Home
                         </Link>
                       </li>
-                      <li class="nav-item mx-2">
-                        <Link class="nav-link" to="/about">
+                      <li class="nav-item mx-2 nav_txt">
+                        <Link
+                          class="nav-link  text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          to="/about"
+                        >
                           About
                         </Link>
                       </li>
-                      <li class="nav-item mx-2">
-                        <Link class="nav-link" to="/contact">
+                      <li class="nav-item mx-2 nav_txt">
+                        <Link
+                          class="nav-link  text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          to="/contact"
+                        >
                           Contact
                         </Link>
                       </li>
-                      <li class="nav-item mx-2">
-                        <button class="nav-link" onClick={onDashboard}>
-                          Dashboard
+                      <li class="nav-item mx-2 nav_txt">
+                        <button
+                          class="nav-link  text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          onClick={onDashboard}
+                        >
+                          <i class="fa-solid fa-briefcase"></i>
+                          Service
                         </button>
                       </li>
                     </ul>
@@ -107,7 +124,7 @@ function Navbar() {
                     {/* Profile */}
                     <div className=" d-flex flex-column flex-lg-row p-4 justify-content-center align-items-center gap-3 ">
                       <button
-                        class="text-white text-decoration-none px-3 py-1 rounded-4"
+                        class=" text-decoration-none px-3 py-1 rounded-4"
                         id="signup"
                         onClick={onLogOut}
                       >
@@ -122,11 +139,11 @@ function Navbar() {
         </>
       ) : (
         <>
-          <div>
+          <div className="navbar_body">
             <nav class="navbar navbar-expand-lg navbar-dark navbar_bg">
               <div class="container">
                 {/* Logo */}
-                <Link class="navbar-brand simple_home_brand" to="/">
+                <Link class="navbar-brand simple_home_brand nav_txt" to="/">
                   Travelista
                 </Link>
 
@@ -151,7 +168,10 @@ function Navbar() {
                 >
                   {/* Sidebar-Header */}
                   <div class="offcanvas-header text-white border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    <h5
+                      class="offcanvas-title  nav_txt"
+                      id="offcanvasNavbarLabel"
+                    >
                       Travelista
                     </h5>
                     <button
@@ -165,18 +185,31 @@ function Navbar() {
                   {/* Sidebar-Body */}
                   <div class="offcanvas-body d-flex flex-column p-4 flex-lg-row p-lg-0">
                     <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3 menu">
-                      <li class="nav-item mx-2">
-                        <Link class="nav-link" aria-current="page" to="/">
+                      <li class="nav-item mx-2 nav_txt">
+                        <Link
+                          class="nav-link   text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          aria-current="page"
+                          to="/"
+                        >
+                          <i class="fa-solid fa-house"></i>
                           Home
                         </Link>
                       </li>
-                      <li class="nav-item mx-2">
-                        <Link class="nav-link" to="/about">
+                      <li class="nav-item mx-2 nav_txt">
+                        <Link
+                          class="nav-link  text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          to="/about"
+                        >
+                          <i class="fa-solid fa-circle-info"></i>
                           About
                         </Link>
                       </li>
-                      <li class="nav-item mx-2">
-                        <Link class="nav-link" to="/contact">
+                      <li class="nav-item mx-2 nav_txt">
+                        <Link
+                          class="nav-link  text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                          to="/contact"
+                        >
+                          <i class="fa-solid fa-id-badge"></i>
                           Contact
                         </Link>
                       </li>
@@ -184,11 +217,14 @@ function Navbar() {
 
                     {/* Login & Sign Up */}
                     <div className=" d-flex flex-column flex-lg-row p-4 justify-content-center align-items-center gap-3 ">
-                      <Link class="text-white" to="/Login">
+                      <Link
+                        class=" text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
+                        to="/Login"
+                      >
                         Login
                       </Link>
                       <Link
-                        class="text-white text-decoration-none px-3 py-1 rounded-4"
+                        class="text-decoration-none px-3 py-1 rounded-4 nav_txt_hov"
                         id="signup"
                         to="/signup"
                       >
