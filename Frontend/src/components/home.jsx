@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/home.css";
 import { useNavigate } from "react-router-dom";
+import Hero from "./hero";
+import Navbar from "./navbar";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,7 +21,12 @@ const Home = () => {
       navigate("/host");
     }
   }
-  return <div className="container home_body">Home Page</div>;
+  return (
+    <>
+      <Navbar />
+      <Hero />
+    </>
+  );
 };
 
 export default Home;
